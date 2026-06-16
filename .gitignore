@@ -24,3 +24,4 @@ ml-course-app/*.local
 *.njsproj
 *.sln
 *.sw?
+ml-course-app/.vite/
