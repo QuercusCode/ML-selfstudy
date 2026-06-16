@@ -1,0 +1,1094 @@
+{
+  "0": [
+    {
+      "id": "q1",
+      "question": "If two vectors $u$ and $v$ in $\\mathbb{R}^2$ are linearly dependent, what is geometrically true about them?",
+      "options": [
+        "They must be orthogonal to each other.",
+        "They must lie on the same line through the origin.",
+        "They span the entire 2D plane.",
+        "They must both be the zero vector."
+      ],
+      "correct": 1,
+      "explanation": "Linearly dependent vectors in $\\mathbb{R}^2$ are scalar multiples of each other, meaning they are collinear and lie on the exact same line passing through the origin."
+    },
+    {
+      "id": "q2",
+      "question": "What is the determinant of a matrix that maps a 2D plane into a 1D line?",
+      "options": [
+        "1",
+        "-1",
+        "0",
+        "Infinity"
+      ],
+      "correct": 2,
+      "explanation": "If a 2D space is squished into a lower dimension (a line or a point), the area of any region is reduced to zero, which means the determinant of the transformation matrix is exactly 0 (non-invertible matrix)."
+    }
+  ],
+  "1": [
+    {
+      "id": "q1",
+      "question": "For a matrix $A$ of shape $m \\times n$, what is the relationship between the dimensions of the Column Space $C(A)$ and the Left Nullspace $N(A^T)$?",
+      "options": [
+        "Their dimensions sum up to $m$.",
+        "Their dimensions sum up to $n$.",
+        "They have the exact same dimension.",
+        "They are orthogonal complements in $\\mathbb{R}^n$."
+      ],
+      "correct": 0,
+      "explanation": "The column space $C(A)$ lies in $\\mathbb{R}^m$ and has dimension equal to Rank $r$. The left nullspace $N(A^T)$ lies in $\\mathbb{R}^m$ and has dimension $m - r$. Therefore, $\\text{dim } C(A) + \\text{dim } N(A^T) = r + (m - r) = m$."
+    },
+    {
+      "id": "q2",
+      "question": "What is the projection matrix $P$ that projects any vector onto the column space of $A$ (assume columns of $A$ are linearly independent)?",
+      "options": [
+        "$P = A(A^TA)^{-1}A^T$",
+        "$P = A^T(A A^T)^{-1}A$",
+        "$P = (A^TA)^{-1}A^T$",
+        "$P = A A^T$"
+      ],
+      "correct": 0,
+      "explanation": "The standard projection matrix onto $C(A)$ is $P = A(A^T A)^{-1} A^T$. If $A$ is invertible, $P$ reduces to the identity matrix $I$."
+    }
+  ],
+  "2": [
+    {
+      "id": "q1",
+      "question": "For SVD decomposition $A = U \\Sigma V^T$, what do the columns of $V$ represent?",
+      "options": [
+        "Eigenvectors of $A A^T$",
+        "Eigenvectors of $A^T A$",
+        "Orthonormal basis for Left Nullspace",
+        "The singular values of $A$"
+      ],
+      "correct": 1,
+      "explanation": "The columns of $V$ (right singular vectors) are the orthonormal eigenvectors of the symmetric matrix $A^T A$."
+    },
+    {
+      "id": "q2",
+      "question": "In PCA, to project data into a 1D space maximizing variance, which eigenvector of the covariance matrix should you choose?",
+      "options": [
+        "The one corresponding to the smallest eigenvalue.",
+        "The one corresponding to the largest eigenvalue.",
+        "Any orthogonal eigenvector.",
+        "The mean vector."
+      ],
+      "correct": 1,
+      "explanation": "The first principal component corresponds to the eigenvector of the covariance matrix with the largest eigenvalue, which represents the direction of maximum variance."
+    }
+  ],
+  "3": [
+    {
+      "id": "q1",
+      "question": "What is the Jacobian matrix $J$ of a function $f: \\mathbb{R}^n \\to \\mathbb{R}^m$?",
+      "options": [
+        "An $n \\times m$ matrix of first-order partial derivatives.",
+        "An $m \\times n$ matrix of first-order partial derivatives.",
+        "A square symmetric matrix of second-order derivatives.",
+        "A scalar representation of the divergence."
+      ],
+      "correct": 1,
+      "explanation": "The Jacobian matrix of a function mapping $n$-dimensional input to $m$-dimensional output is an $m \\times n$ matrix, where row $i$ is the gradient of the $i$-th component function $f_i$."
+    },
+    {
+      "id": "q2",
+      "question": "For $z = f(y)$ and $y = g(x)$, what is the multivariate chain rule for the derivative $\\frac{\\partial z}{\\partial x}$?",
+      "options": [
+        "$\\frac{\\partial z}{\\partial x} = \\frac{\\partial z}{\\partial y} \\cdot \\frac{\\partial y}{\\partial x}$ (matrix multiplication of Jacobians)",
+        "$\\frac{\\partial z}{\\partial x} = \\frac{\\partial z}{\\partial y} + \\frac{\\partial y}{\\partial x}$",
+        "$\\frac{\\partial z}{\\partial x} = \\text{det}(J_f) \\cdot J_g$",
+        "$\\frac{\\partial z}{\\partial x} = J_g^{-1} \\cdot J_f$"
+      ],
+      "correct": 0,
+      "explanation": "By the chain rule, the Jacobian of the composition is the matrix product of the individual Jacobians: $J_{f \\circ g}(x) = J_f(g(x)) \\cdot J_g(x)$."
+    }
+  ],
+  "4": [
+    {
+      "id": "q1",
+      "question": "What is the gradient of the quadratic form $f(x) = x^T A x$ with respect to $x$ (assume $A$ is symmetric)?",
+      "options": [
+        "$A x$",
+        "$2 A x$",
+        "$A^T x$",
+        "$x^T (A + A^T)$"
+      ],
+      "correct": 1,
+      "explanation": "The gradient of $x^T A x$ with respect to $x$ is $(A + A^T) x$. If $A$ is symmetric, $A^T = A$, giving $\\nabla_x (x^T A x) = 2 A x$."
+    },
+    {
+      "id": "q2",
+      "question": "If we want to minimize $f(x)$, in which direction should we step to perform Gradient Descent?",
+      "options": [
+        "In the direction of the gradient $\\nabla f(x)$",
+        "In the direction of the negative gradient $-\\nabla f(x)$",
+        "Orthogonal to the gradient $\\nabla f(x)$",
+        "In the direction of the Hessian $H^{-1} \\nabla f(x)$"
+      ],
+      "correct": 1,
+      "explanation": "The gradient vector points in the direction of steepest ascent (fastest increase). Therefore, the negative gradient $-\\nabla f(x)$ points in the direction of steepest descent (fastest decrease)."
+    }
+  ],
+  "5": [
+    {
+      "id": "q1",
+      "question": "If two events $A$ and $B$ are independent, what is $P(A \\cap B)$?",
+      "options": [
+        "$P(A) + P(B)$",
+        "$P(A) \\cdot P(B)$",
+        "$P(A|B)$",
+        "$0$"
+      ],
+      "correct": 1,
+      "explanation": "By definition, two events are independent if and only if their joint probability is the product of their individual probabilities: $P(A \\cap B) = P(A)P(B)$."
+    },
+    {
+      "id": "q2",
+      "question": "For a model studying **Probability, distributions, Bayes**, what is the primary goal of validation/evaluation?",
+      "options": [
+        "To minimize training loss to absolute zero.",
+        "To estimate the model's generalization performance on unseen test data and prevent overfitting.",
+        "To increase the parameter dimensions of the model layers.",
+        "To train the weights using gradient descent."
+      ],
+      "correct": 1,
+      "explanation": "Validation sets help evaluate how well a model generalizes to new, unseen samples, acting as a proxy for the test dataset to guide model adjustments."
+    }
+  ],
+  "6": [
+    {
+      "id": "q1",
+      "question": "What is the main difference between Maximum Likelihood Estimation (MLE) and Maximum A Posteriori (MAP)?",
+      "options": [
+        "MLE incorporates a prior probability distribution over parameters, while MAP does not.",
+        "MAP incorporates a prior probability distribution over parameters, while MLE does not.",
+        "MLE is used for regression while MAP is only used for classification.",
+        "MAP calculations do not require calculating the likelihood function."
+      ],
+      "correct": 1,
+      "explanation": "MAP extends MLE by multiplying the likelihood by a prior distribution: $\\theta_{MAP} = \\arg\\max P(X|\\theta)P(\\theta)$."
+    },
+    {
+      "id": "q2",
+      "question": "For a model studying **Statistics, MLE, MAP, hypothesis testing**, what is the primary goal of validation/evaluation?",
+      "options": [
+        "To minimize training loss to absolute zero.",
+        "To estimate the model's generalization performance on unseen test data and prevent overfitting.",
+        "To increase the parameter dimensions of the model layers.",
+        "To train the weights using gradient descent."
+      ],
+      "correct": 1,
+      "explanation": "Validation sets help evaluate how well a model generalizes to new, unseen samples, acting as a proxy for the test dataset to guide model adjustments."
+    }
+  ],
+  "7": [
+    {
+      "id": "q1",
+      "question": "Which of the following is true about the Kullback-Leibler (KL) Divergence $D_{KL}(P \\parallel Q)$?",
+      "options": [
+        "It is symmetric, meaning $D_{KL}(P \\parallel Q) = D_{KL}(Q \\parallel P)$.",
+        "It can be negative if $Q$ fits $P$ very closely.",
+        "It is always non-negative, and equals 0 if and only if $P = Q$ almost everywhere.",
+        "It satisfies the triangle inequality."
+      ],
+      "correct": 2,
+      "explanation": "By Gibbs' inequality, KL divergence is always $\\ge 0$, and equals 0 if and only if the two distributions are identical. It is asymmetric and does not satisfy the triangle inequality, so it is not a true metric."
+    },
+    {
+      "id": "q2",
+      "question": "For a model studying **Information theory, entropy, KL divergence**, what is the primary goal of validation/evaluation?",
+      "options": [
+        "To minimize training loss to absolute zero.",
+        "To estimate the model's generalization performance on unseen test data and prevent overfitting.",
+        "To increase the parameter dimensions of the model layers.",
+        "To train the weights using gradient descent."
+      ],
+      "correct": 1,
+      "explanation": "Validation sets help evaluate how well a model generalizes to new, unseen samples, acting as a proxy for the test dataset to guide model adjustments."
+    }
+  ],
+  "8": [
+    {
+      "id": "q1",
+      "question": "In ordinary least squares (OLS) linear regression, what closed-form solution yields the optimal weight vector $w$?",
+      "options": [
+        "$w = (X^T X)^{-1} X^T y$",
+        "$w = X^T (X X^T)^{-1} y$",
+        "$w = (X^T y)^{-1} X^T X$",
+        "$w = X^T X y$"
+      ],
+      "correct": 0,
+      "explanation": "The normal equation is $X^T X w = X^T y$. Solving for $w$ gives $w = (X^T X)^{-1} X^T y$, assuming $X^T X$ is invertible."
+    },
+    {
+      "id": "q2",
+      "question": "For a model studying **Linear & Polynomial Regression**, what is the primary goal of validation/evaluation?",
+      "options": [
+        "To minimize training loss to absolute zero.",
+        "To estimate the model's generalization performance on unseen test data and prevent overfitting.",
+        "To increase the parameter dimensions of the model layers.",
+        "To train the weights using gradient descent."
+      ],
+      "correct": 1,
+      "explanation": "Validation sets help evaluate how well a model generalizes to new, unseen samples, acting as a proxy for the test dataset to guide model adjustments."
+    }
+  ],
+  "9": [
+    {
+      "id": "q1",
+      "question": "What loss function is minimized in Logistic Regression?",
+      "options": [
+        "Mean Squared Error (MSE)",
+        "Mean Absolute Error (MAE)",
+        "Binary Cross-Entropy / Log Loss",
+        "Hinge Loss"
+      ],
+      "correct": 2,
+      "explanation": "Logistic Regression uses Maximum Likelihood Estimation, which is equivalent to minimizing the Binary Cross-Entropy (Log Loss) function."
+    },
+    {
+      "id": "q2",
+      "question": "For a model studying **Logistic Regression & Classification**, what is the primary goal of validation/evaluation?",
+      "options": [
+        "To minimize training loss to absolute zero.",
+        "To estimate the model's generalization performance on unseen test data and prevent overfitting.",
+        "To increase the parameter dimensions of the model layers.",
+        "To train the weights using gradient descent."
+      ],
+      "correct": 1,
+      "explanation": "Validation sets help evaluate how well a model generalizes to new, unseen samples, acting as a proxy for the test dataset to guide model adjustments."
+    }
+  ],
+  "10": [
+    {
+      "id": "q1",
+      "question": "What is the primary purpose of the 'Kernel Trick' in Support Vector Machines (SVMs)?",
+      "options": [
+        "To speed up linear matrix multiplications on GPUs.",
+        "To map input features implicitly into a high-dimensional space where they become linearly separable, without computing the high-dimensional vectors directly.",
+        "To regularize parameters by forcing weights towards zero.",
+        "To compute the optimal hyperplanes using decision trees."
+      ],
+      "correct": 1,
+      "explanation": "The Kernel Trick computes inner products in high-dimensional feature spaces directly from input space values using a kernel function $K(x, z) = \\langle \\phi(x), \\phi(z) \\rangle$, bypassing explicit coordinate mappings."
+    },
+    {
+      "id": "q2",
+      "question": "For a model studying **SVM, kernels, dual formulation**, what is the primary goal of validation/evaluation?",
+      "options": [
+        "To minimize training loss to absolute zero.",
+        "To estimate the model's generalization performance on unseen test data and prevent overfitting.",
+        "To increase the parameter dimensions of the model layers.",
+        "To train the weights using gradient descent."
+      ],
+      "correct": 1,
+      "explanation": "Validation sets help evaluate how well a model generalizes to new, unseen samples, acting as a proxy for the test dataset to guide model adjustments."
+    }
+  ],
+  "11": [
+    {
+      "id": "q1",
+      "question": "In Random Forests, how does bagging reduce overfitting?",
+      "options": [
+        "By training trees sequentially so each tree fixes the errors of the previous one.",
+        "By training trees on bootstrapped subsets of data and averaging predictions, reducing variance without increasing bias.",
+        "By pruning trees back to a depth of 1 or 2.",
+        "By applying L1 regularization to the leaf nodes."
+      ],
+      "correct": 1,
+      "explanation": "Bootstrap Aggregating (bagging) trains multiple independent trees on random subsamples (with replacement) of the training dataset. Averaging their predictions reduces the overall model variance significantly."
+    },
+    {
+      "id": "q2",
+      "question": "For a model studying **Decision Trees, Random Forests, bagging**, what is the primary goal of validation/evaluation?",
+      "options": [
+        "To minimize training loss to absolute zero.",
+        "To estimate the model's generalization performance on unseen test data and prevent overfitting.",
+        "To increase the parameter dimensions of the model layers.",
+        "To train the weights using gradient descent."
+      ],
+      "correct": 1,
+      "explanation": "Validation sets help evaluate how well a model generalizes to new, unseen samples, acting as a proxy for the test dataset to guide model adjustments."
+    }
+  ],
+  "12": [
+    {
+      "id": "q1",
+      "question": "How does Gradient Boosting differ from Bagging (Random Forests)?",
+      "options": [
+        "Gradient Boosting builds trees in parallel, whereas Random Forests build them sequentially.",
+        "Gradient Boosting builds trees sequentially, where each new tree is fit to the pseudo-residuals (gradients of loss) of the ensemble's previous predictions.",
+        "Gradient Boosting does not use decision trees.",
+        "Gradient Boosting uses bootstrapping, whereas Random Forests do not."
+      ],
+      "correct": 1,
+      "explanation": "Boosting is an additive sequential model. Each successive tree aims to minimize the remaining residuals (errors) left behind by all previous trees combined."
+    },
+    {
+      "id": "q2",
+      "question": "For a model studying **Gradient Boosting, XGBoost**, what is the primary goal of validation/evaluation?",
+      "options": [
+        "To minimize training loss to absolute zero.",
+        "To estimate the model's generalization performance on unseen test data and prevent overfitting.",
+        "To increase the parameter dimensions of the model layers.",
+        "To train the weights using gradient descent."
+      ],
+      "correct": 1,
+      "explanation": "Validation sets help evaluate how well a model generalizes to new, unseen samples, acting as a proxy for the test dataset to guide model adjustments."
+    }
+  ],
+  "13": [
+    {
+      "id": "q1",
+      "question": "In K-Means clustering, what does the algorithm minimize during its iterations?",
+      "options": [
+        "The distance between centroids.",
+        "The sum of squared distances between points and their assigned cluster centroid (Within-Cluster Sum of Squares).",
+        "The number of clusters $K$.",
+        "The likelihood of a Gaussian distribution."
+      ],
+      "correct": 1,
+      "explanation": "K-Means minimizes the Within-Cluster Sum of Squares (WCSS): $\\sum_{i=1}^K \\sum_{x \\in C_i} \\|x - \\mu_i\\|^2$."
+    },
+    {
+      "id": "q2",
+      "question": "For a model studying **K-Means, GMMs**, what is the primary goal of validation/evaluation?",
+      "options": [
+        "To minimize training loss to absolute zero.",
+        "To estimate the model's generalization performance on unseen test data and prevent overfitting.",
+        "To increase the parameter dimensions of the model layers.",
+        "To train the weights using gradient descent."
+      ],
+      "correct": 1,
+      "explanation": "Validation sets help evaluate how well a model generalizes to new, unseen samples, acting as a proxy for the test dataset to guide model adjustments."
+    }
+  ],
+  "14": [
+    {
+      "id": "q1",
+      "question": "Which of the following describes a key difference between PCA and t-SNE?",
+      "options": [
+        "PCA is non-linear, while t-SNE is linear.",
+        "PCA preserves global linear structures and maximizes variance, while t-SNE is a non-linear method that preserves local neighborhoods.",
+        "t-SNE is much faster and scales better to billions of points than PCA.",
+        "PCA requires class labels, while t-SNE is completely unsupervised."
+      ],
+      "correct": 1,
+      "explanation": "PCA is a linear dimensionality reduction technique that preserves global structures (variance). t-SNE is non-linear and probabilistic, focusing heavily on preserving local pairwise similarities."
+    },
+    {
+      "id": "q2",
+      "question": "For a model studying **PCA, t-SNE, UMAP**, what is the primary goal of validation/evaluation?",
+      "options": [
+        "To minimize training loss to absolute zero.",
+        "To estimate the model's generalization performance on unseen test data and prevent overfitting.",
+        "To increase the parameter dimensions of the model layers.",
+        "To train the weights using gradient descent."
+      ],
+      "correct": 1,
+      "explanation": "Validation sets help evaluate how well a model generalizes to new, unseen samples, acting as a proxy for the test dataset to guide model adjustments."
+    }
+  ],
+  "15": [
+    {
+      "id": "q1",
+      "question": "Why does L1 regularization (Lasso) lead to sparse weight vectors, whereas L2 regularization (Ridge) does not?",
+      "options": [
+        "L1 regularization uses a quadratic penalty, while L2 uses absolute values.",
+        "L1 regularization has a constant gradient magnitude that drives weights exactly to zero at the origin, whereas L2 gradients scale with weight size, causing asymptotic shrinkage.",
+        "L1 regularization increases variance while L2 increases bias.",
+        "L2 regularization prevents weights from changing at all."
+      ],
+      "correct": 1,
+      "explanation": "The L1 norm penalty $|w|$ has non-zero constant derivatives ($+1$ or $-1$) everywhere except at $w=0$. This linear gradient continues driving weights to absolute zero. L2 regularization ($w^2$) has gradient $2w$, which vanishes as $w \\to 0$."
+    },
+    {
+      "id": "q2",
+      "question": "For a model studying **Regularization (L1, L2), bias-variance trade-off**, what is the primary goal of validation/evaluation?",
+      "options": [
+        "To minimize training loss to absolute zero.",
+        "To estimate the model's generalization performance on unseen test data and prevent overfitting.",
+        "To increase the parameter dimensions of the model layers.",
+        "To train the weights using gradient descent."
+      ],
+      "correct": 1,
+      "explanation": "Validation sets help evaluate how well a model generalizes to new, unseen samples, acting as a proxy for the test dataset to guide model adjustments."
+    }
+  ],
+  "16": [
+    {
+      "id": "q1",
+      "question": "When evaluating a classification model with highly imbalanced classes, which metric is usually most appropriate?",
+      "options": [
+        "Classification Accuracy",
+        "F1-Score or Precision-Recall Area Under Curve (PR-AUC)",
+        "Mean Absolute Error",
+        "R-squared ($R^2$)"
+      ],
+      "correct": 1,
+      "explanation": "Accuracy can be deceptively high in imbalanced datasets (e.g. 99% accuracy by predicting the majority class). F1-Score combines Precision and Recall, focusing on the model performance of the minority class."
+    },
+    {
+      "id": "q2",
+      "question": "For a model studying **Validation, metrics, cross-validation**, what is the primary goal of validation/evaluation?",
+      "options": [
+        "To minimize training loss to absolute zero.",
+        "To estimate the model's generalization performance on unseen test data and prevent overfitting.",
+        "To increase the parameter dimensions of the model layers.",
+        "To train the weights using gradient descent."
+      ],
+      "correct": 1,
+      "explanation": "Validation sets help evaluate how well a model generalizes to new, unseen samples, acting as a proxy for the test dataset to guide model adjustments."
+    }
+  ],
+  "17": [
+    {
+      "id": "q1",
+      "question": "Why are non-linear activation functions (like ReLU or Sigmoid) essential in Deep Neural Networks?",
+      "options": [
+        "To prevent weights from becoming too large.",
+        "Without non-linearity, any multi-layer neural network collapses into a single linear transformation, preventing it from learning complex decision boundaries.",
+        "To speed up gradient computations on GPUs.",
+        "To normalize outputs between 0 and 1."
+      ],
+      "correct": 1,
+      "explanation": "A composition of linear functions is still a linear function: $W_2 (W_1 x + b_1) + b_2 = (W_2 W_1) x + (W_2 b_1 + b_2) = W' x + b'$. Non-linear activations allow networks to approximate arbitrary non-linear functions."
+    },
+    {
+      "id": "q2",
+      "question": "For a model studying **Perceptrons, MLP, activations**, what is the primary goal of validation/evaluation?",
+      "options": [
+        "To minimize training loss to absolute zero.",
+        "To estimate the model's generalization performance on unseen test data and prevent overfitting.",
+        "To increase the parameter dimensions of the model layers.",
+        "To train the weights using gradient descent."
+      ],
+      "correct": 1,
+      "explanation": "Validation sets help evaluate how well a model generalizes to new, unseen samples, acting as a proxy for the test dataset to guide model adjustments."
+    }
+  ],
+  "18": [
+    {
+      "id": "q1",
+      "question": "In neural network training, what is the core mathematical tool used in Backpropagation?",
+      "options": [
+        "The Taylor expansion",
+        "The chain rule of calculus",
+        "Gram-Schmidt orthogonalization",
+        "Monte Carlo integration"
+      ],
+      "correct": 1,
+      "explanation": "Backpropagation uses the calculus chain rule to compute gradients of the loss function with respect to weights of each layer sequentially, from output to input."
+    },
+    {
+      "id": "q2",
+      "question": "For a model studying **Backpropagation, optimization**, what is the primary goal of validation/evaluation?",
+      "options": [
+        "To minimize training loss to absolute zero.",
+        "To estimate the model's generalization performance on unseen test data and prevent overfitting.",
+        "To increase the parameter dimensions of the model layers.",
+        "To train the weights using gradient descent."
+      ],
+      "correct": 1,
+      "explanation": "Validation sets help evaluate how well a model generalizes to new, unseen samples, acting as a proxy for the test dataset to guide model adjustments."
+    }
+  ],
+  "19": [
+    {
+      "id": "q1",
+      "question": "What problem does Batch Normalization primarily solve during deep network training?",
+      "options": [
+        "It prevents weights from being updated too quickly.",
+        "It stabilizes training by normalizing layer inputs to have zero mean and unit variance, reducing internal covariate shift.",
+        "It forces weights to be orthogonal.",
+        "It replaces the activation functions."
+      ],
+      "correct": 1,
+      "explanation": "Batch Normalization normalizes the activations of a layer across a mini-batch, stabilizing gradient flows and allowing faster learning rates and less sensitivity to initialization."
+    },
+    {
+      "id": "q2",
+      "question": "For a model studying **Initialization, normalization**, what is the primary goal of validation/evaluation?",
+      "options": [
+        "To minimize training loss to absolute zero.",
+        "To estimate the model's generalization performance on unseen test data and prevent overfitting.",
+        "To increase the parameter dimensions of the model layers.",
+        "To train the weights using gradient descent."
+      ],
+      "correct": 1,
+      "explanation": "Validation sets help evaluate how well a model generalizes to new, unseen samples, acting as a proxy for the test dataset to guide model adjustments."
+    }
+  ],
+  "20": [
+    {
+      "id": "q1",
+      "question": "In a Convolutional Neural Network (CNN), what is the main purpose of Max Pooling layers?",
+      "options": [
+        "To add non-linearity to the network.",
+        "To perform spatial downsampling, reducing the representation size, parameter count, and computing workload while providing translational invariance.",
+        "To regularize weights by dropping out neurons.",
+        "To compute gradients during backpropagation."
+      ],
+      "correct": 1,
+      "explanation": "Max Pooling reduces the spatial dimensions (width/height) of activation maps, extracting the most active features while keeping the network invariant to small shifts."
+    },
+    {
+      "id": "q2",
+      "question": "For a model studying **CNNs, convolutions, pooling**, what is the primary goal of validation/evaluation?",
+      "options": [
+        "To minimize training loss to absolute zero.",
+        "To estimate the model's generalization performance on unseen test data and prevent overfitting.",
+        "To increase the parameter dimensions of the model layers.",
+        "To train the weights using gradient descent."
+      ],
+      "correct": 1,
+      "explanation": "Validation sets help evaluate how well a model generalizes to new, unseen samples, acting as a proxy for the test dataset to guide model adjustments."
+    }
+  ],
+  "21": [
+    {
+      "id": "q1",
+      "question": "Why do standard Recurrent Neural Networks (RNNs) struggle with long-term sequences, and how do LSTMs fix this?",
+      "options": [
+        "RNNs lack recurrent connections; LSTMs add them.",
+        "RNNs suffer from vanishing/exploding gradients due to repeated matrix multiplications over time. LSTMs introduce additive gate states to preserve gradients over long durations.",
+        "LSTMs run in parallel, while RNNs run sequentially.",
+        "LSTMs use attention weights instead of hidden states."
+      ],
+      "correct": 1,
+      "explanation": "LSTMs introduce a cell state ($C_t$) regulated by forget, input, and output gates. Gradients can flow backwards through the cell state additively, preventing vanishing gradients."
+    },
+    {
+      "id": "q2",
+      "question": "For a model studying **RNNs, LSTMs, GRUs**, what is the primary goal of validation/evaluation?",
+      "options": [
+        "To minimize training loss to absolute zero.",
+        "To estimate the model's generalization performance on unseen test data and prevent overfitting.",
+        "To increase the parameter dimensions of the model layers.",
+        "To train the weights using gradient descent."
+      ],
+      "correct": 1,
+      "explanation": "Validation sets help evaluate how well a model generalizes to new, unseen samples, acting as a proxy for the test dataset to guide model adjustments."
+    }
+  ],
+  "22": [
+    {
+      "id": "q1",
+      "question": "In the self-attention mechanism, how are the attention weights between tokens computed?",
+      "options": [
+        "By taking the dot product of the Query (Q) and Key (K) vectors, scaling it, and applying a Softmax function.",
+        "By adding the Query (Q) and Value (V) vectors.",
+        "By running a convolutional filter over the embeddings.",
+        "By averaging the input sequence embeddings."
+      ],
+      "correct": 0,
+      "explanation": "Scaled Dot-Product Attention is computed as: $\\text{Attention}(Q, K, V) = \\text{softmax}\\left(\\frac{Q K^T}{\\sqrt{d_k}}\\right) V$."
+    },
+    {
+      "id": "q2",
+      "question": "For a model studying **Attention mechanism, Self-attention**, what is the primary goal of validation/evaluation?",
+      "options": [
+        "To minimize training loss to absolute zero.",
+        "To estimate the model's generalization performance on unseen test data and prevent overfitting.",
+        "To increase the parameter dimensions of the model layers.",
+        "To train the weights using gradient descent."
+      ],
+      "correct": 1,
+      "explanation": "Validation sets help evaluate how well a model generalizes to new, unseen samples, acting as a proxy for the test dataset to guide model adjustments."
+    }
+  ],
+  "23": [
+    {
+      "id": "q1",
+      "question": "What is the primary architectural difference between BERT and GPT?",
+      "options": [
+        "BERT is an encoder-decoder model, while GPT is a convolutional network.",
+        "BERT uses bidirectional self-attention to encode context from both left and right directions, whereas GPT uses masked (causal) self-attention to predict the next token (left-to-right).",
+        "BERT is trained on images, while GPT is trained on text.",
+        "GPT uses self-attention, while BERT does not."
+      ],
+      "correct": 1,
+      "explanation": "BERT is an encoder architecture that looks at both left and right context simultaneously (bidirectional). GPT is a decoder-only model that masks future tokens to perform autoregressive next-token prediction."
+    },
+    {
+      "id": "q2",
+      "question": "For a model studying **Transformers, BERT, GPT architecture**, what is the primary goal of validation/evaluation?",
+      "options": [
+        "To minimize training loss to absolute zero.",
+        "To estimate the model's generalization performance on unseen test data and prevent overfitting.",
+        "To increase the parameter dimensions of the model layers.",
+        "To train the weights using gradient descent."
+      ],
+      "correct": 1,
+      "explanation": "Validation sets help evaluate how well a model generalizes to new, unseen samples, acting as a proxy for the test dataset to guide model adjustments."
+    }
+  ],
+  "24": [
+    {
+      "id": "q1",
+      "question": "In Variational Autoencoders (VAEs), what does the Reparameterization Trick accomplish?",
+      "options": [
+        "It converts the decoder into a classifier.",
+        "It allows backpropagation through random sampling nodes by expressing the latent sample $z$ as a deterministic function of parameters and independent noise: $z = \\mu + \\sigma \\odot \\epsilon$.",
+        "It compresses the latent dimensions to absolute zero.",
+        "It adds dropout regularization to the bottleneck layer."
+      ],
+      "correct": 1,
+      "explanation": "Sampling from $\\mathcal{N}(\\mu, \\sigma^2)$ directly is non-differentiable. By drawing noise $\\epsilon \\sim \\mathcal{N}(0, I)$ and computing $z = \\mu + \\sigma \\odot \\epsilon$, the network parameters $\\mu$ and $\\sigma$ can be updated using gradient descent."
+    },
+    {
+      "id": "q2",
+      "question": "For a model studying **Autoencoders, VAEs**, what is the primary goal of validation/evaluation?",
+      "options": [
+        "To minimize training loss to absolute zero.",
+        "To estimate the model's generalization performance on unseen test data and prevent overfitting.",
+        "To increase the parameter dimensions of the model layers.",
+        "To train the weights using gradient descent."
+      ],
+      "correct": 1,
+      "explanation": "Validation sets help evaluate how well a model generalizes to new, unseen samples, acting as a proxy for the test dataset to guide model adjustments."
+    }
+  ],
+  "25": [
+    {
+      "id": "q1",
+      "question": "What objective function represents the minimax game played by a Generative Adversarial Network (GAN)?",
+      "options": [
+        "Mean Squared Error between real and fake images.",
+        "Minimizing the Discriminator's accuracy to 0%.",
+        "The minimax objective where the Generator tries to minimize and the Discriminator tries to maximize classification accuracy of real vs fake data.",
+        "Maximum Likelihood Estimation of the latent vectors."
+      ],
+      "correct": 2,
+      "explanation": "GANs utilize a minimax objective: $\\min_G \\max_D V(D, G) = \\mathbb{E}_{x}[\\log D(x)] + \\mathbb{E}_{z}[\\log(1 - D(G(z)))]$, representing a competitive game between Generator and Discriminator."
+    },
+    {
+      "id": "q2",
+      "question": "For a model studying **GANs**, what is the primary goal of validation/evaluation?",
+      "options": [
+        "To minimize training loss to absolute zero.",
+        "To estimate the model's generalization performance on unseen test data and prevent overfitting.",
+        "To increase the parameter dimensions of the model layers.",
+        "To train the weights using gradient descent."
+      ],
+      "correct": 1,
+      "explanation": "Validation sets help evaluate how well a model generalizes to new, unseen samples, acting as a proxy for the test dataset to guide model adjustments."
+    }
+  ],
+  "26": [
+    {
+      "id": "q1",
+      "question": "In Denoising Diffusion Probabilistic Models (DDPM), what does the neural network learn to predict during the reverse process?",
+      "options": [
+        "The original high-resolution image directly.",
+        "The noise added to the image at a given timestep $t$.",
+        "The classification label of the noisy image.",
+        "The latent coordinates of a bottleneck vector."
+      ],
+      "correct": 1,
+      "explanation": "DDPM networks (usually U-Nets) are trained to predict the noise vector $\\epsilon$ that was added to clean data to produce the noisy input $x_t$ at timestep $t$."
+    },
+    {
+      "id": "q2",
+      "question": "For a model studying **Diffusion models, DDPM**, what is the primary goal of validation/evaluation?",
+      "options": [
+        "To minimize training loss to absolute zero.",
+        "To estimate the model's generalization performance on unseen test data and prevent overfitting.",
+        "To increase the parameter dimensions of the model layers.",
+        "To train the weights using gradient descent."
+      ],
+      "correct": 1,
+      "explanation": "Validation sets help evaluate how well a model generalizes to new, unseen samples, acting as a proxy for the test dataset to guide model adjustments."
+    }
+  ],
+  "27": [
+    {
+      "id": "q1",
+      "question": "What equation is the mathematical foundation of Q-learning?",
+      "options": [
+        "The Navier-Stokes equation",
+        "The Bellman Optimality Equation",
+        "The Fourier Transform",
+        "The Dirac Delta function"
+      ],
+      "correct": 1,
+      "explanation": "Q-learning is based on the Bellman equation: $Q(s, a) = R(s, a) + \\gamma \\max_{a'} Q(s', a')$, updating expected cumulative future rewards recursively."
+    },
+    {
+      "id": "q2",
+      "question": "For a model studying **Reinforcement learning, Q-learning, policy gradients**, what is the primary goal of validation/evaluation?",
+      "options": [
+        "To minimize training loss to absolute zero.",
+        "To estimate the model's generalization performance on unseen test data and prevent overfitting.",
+        "To increase the parameter dimensions of the model layers.",
+        "To train the weights using gradient descent."
+      ],
+      "correct": 1,
+      "explanation": "Validation sets help evaluate how well a model generalizes to new, unseen samples, acting as a proxy for the test dataset to guide model adjustments."
+    }
+  ],
+  "28": [
+    {
+      "id": "q1",
+      "question": "What is the core operation used in Graph Convolutional Networks (GCNs) to aggregate neighbor information?",
+      "options": [
+        "Pooling features over time.",
+        "Message passing (aggregating local node feature vectors using adjacency weights).",
+        "Flattening the adjacency matrix into a linear vector.",
+        "Applying convolutional kernels to graph edges only."
+      ],
+      "correct": 1,
+      "explanation": "GCNs update node representations by aggregating features from neighboring nodes: $h_v^{(k)} = \\text{aggregate}(\\{h_u^{(k-1)} : u \\in N(v)\\})$, which represents message passing."
+    },
+    {
+      "id": "q2",
+      "question": "For a model studying **Graph Neural Networks (GNNs)**, what is the primary goal of validation/evaluation?",
+      "options": [
+        "To minimize training loss to absolute zero.",
+        "To estimate the model's generalization performance on unseen test data and prevent overfitting.",
+        "To increase the parameter dimensions of the model layers.",
+        "To train the weights using gradient descent."
+      ],
+      "correct": 1,
+      "explanation": "Validation sets help evaluate how well a model generalizes to new, unseen samples, acting as a proxy for the test dataset to guide model adjustments."
+    }
+  ],
+  "29": [
+    {
+      "id": "q1",
+      "question": "What is the primary risk of standardizing features (e.g. computing mean and variance) on the entire dataset before splitting into train/test sets?",
+      "options": [
+        "Data leakage (training parameters leaked from the test set statistics, leading to overoptimistic test evaluation).",
+        "Increasing the training computation time.",
+        "Underfitting the training dataset.",
+        "Causing numerical underflow errors."
+      ],
+      "correct": 0,
+      "explanation": "Calculating scaling parameters (mean/variance) on the entire dataset leaks information from the test set into training. Normalization statistics must be calculated *only* on the training split."
+    },
+    {
+      "id": "q2",
+      "question": "For a model studying **Data pipelines, preprocessing, ETL**, what is the primary goal of validation/evaluation?",
+      "options": [
+        "To minimize training loss to absolute zero.",
+        "To estimate the model's generalization performance on unseen test data and prevent overfitting.",
+        "To increase the parameter dimensions of the model layers.",
+        "To train the weights using gradient descent."
+      ],
+      "correct": 1,
+      "explanation": "Validation sets help evaluate how well a model generalizes to new, unseen samples, acting as a proxy for the test dataset to guide model adjustments."
+    }
+  ],
+  "30": [
+    {
+      "id": "q1",
+      "question": "What is ONNX (Open Neural Network Exchange)?",
+      "options": [
+        "A cloud hosting provider for neural networks.",
+        "An open-standard format for representing machine learning models, allowing interoperability between frameworks like PyTorch and TensorFlow.",
+        "A training optimizer that replaces Adam.",
+        "A compiler that converts Python code to C++."
+      ],
+      "correct": 1,
+      "explanation": "ONNX defines a common set of operators and model structure representations, enabling developers to train a model in PyTorch and deploy it in C++ runtimes or other frameworks."
+    },
+    {
+      "id": "q2",
+      "question": "For a model studying **Model serialization, ONNX**, what is the primary goal of validation/evaluation?",
+      "options": [
+        "To minimize training loss to absolute zero.",
+        "To estimate the model's generalization performance on unseen test data and prevent overfitting.",
+        "To increase the parameter dimensions of the model layers.",
+        "To train the weights using gradient descent."
+      ],
+      "correct": 1,
+      "explanation": "Validation sets help evaluate how well a model generalizes to new, unseen samples, acting as a proxy for the test dataset to guide model adjustments."
+    }
+  ],
+  "31": [
+    {
+      "id": "q1",
+      "question": "Why is containerization (e.g. using Docker) highly recommended for deploying Machine Learning APIs?",
+      "options": [
+        "It speeds up model inference by 10x.",
+        "It packages the model, dependencies, code, and OS environment into a single unit, guaranteeing consistent model execution across different development and production servers.",
+        "It replaces the API framework.",
+        "It automatically compresses neural network weights."
+      ],
+      "correct": 1,
+      "explanation": "Docker wraps software in a filesystem container, avoiding 'works on my machine' issues by packing all dependencies, python runtimes, and models into a reproducible environment."
+    },
+    {
+      "id": "q2",
+      "question": "For a model studying **API deployment, Flask, FastAPI, Docker**, what is the primary goal of validation/evaluation?",
+      "options": [
+        "To minimize training loss to absolute zero.",
+        "To estimate the model's generalization performance on unseen test data and prevent overfitting.",
+        "To increase the parameter dimensions of the model layers.",
+        "To train the weights using gradient descent."
+      ],
+      "correct": 1,
+      "explanation": "Validation sets help evaluate how well a model generalizes to new, unseen samples, acting as a proxy for the test dataset to guide model adjustments."
+    }
+  ],
+  "32": [
+    {
+      "id": "q1",
+      "question": "Which cloud service model is most appropriate for deploying a model with highly variable traffic where you only pay per API request?",
+      "options": [
+        "Virtual Machines (AWS EC2)",
+        "Serverless / Functions-as-a-Service (AWS Lambda / Google Cloud Functions)",
+        "Bare Metal Servers",
+        "Object Storage (AWS S3)"
+      ],
+      "correct": 1,
+      "explanation": "Serverless functions scale down to zero when there is no traffic and spin up dynamically on demand, providing a cost-effective solution for variable, low-to-medium volume API requests."
+    },
+    {
+      "id": "q2",
+      "question": "For a model studying **Cloud deployment, AWS, GCP**, what is the primary goal of validation/evaluation?",
+      "options": [
+        "To minimize training loss to absolute zero.",
+        "To estimate the model's generalization performance on unseen test data and prevent overfitting.",
+        "To increase the parameter dimensions of the model layers.",
+        "To train the weights using gradient descent."
+      ],
+      "correct": 1,
+      "explanation": "Validation sets help evaluate how well a model generalizes to new, unseen samples, acting as a proxy for the test dataset to guide model adjustments."
+    }
+  ],
+  "33": [
+    {
+      "id": "q1",
+      "question": "What is Concept Drift in production machine learning systems?",
+      "options": [
+        "When the input feature data distribution changes over time.",
+        "When the statistical properties of the target variable change over time, meaning the mapping from features to labels ($P(y|x)$) has changed.",
+        "When model weights slowly become corrupt due to memory leaks.",
+        "When developers change the model code in production."
+      ],
+      "correct": 1,
+      "explanation": "Concept Drift occurs when the relationship between input features and target predictions shifts (e.g. historical buying behavior patterns change). Feature Drift (Covariate Shift) is when the input distribution $P(x)$ changes."
+    },
+    {
+      "id": "q2",
+      "question": "For a model studying **Monitoring, drift detection**, what is the primary goal of validation/evaluation?",
+      "options": [
+        "To minimize training loss to absolute zero.",
+        "To estimate the model's generalization performance on unseen test data and prevent overfitting.",
+        "To increase the parameter dimensions of the model layers.",
+        "To train the weights using gradient descent."
+      ],
+      "correct": 1,
+      "explanation": "Validation sets help evaluate how well a model generalizes to new, unseen samples, acting as a proxy for the test dataset to guide model adjustments."
+    }
+  ],
+  "34": [
+    {
+      "id": "q1",
+      "question": "What is the key difference between Data Parallelism (DP) and Model Parallelism (MP) in distributed training?",
+      "options": [
+        "DP splits the neural network layers across GPUs, while MP splits the data batches.",
+        "DP replicates the model on all GPUs and splits the mini-batches across them, while MP partitions the model weights/layers across different GPUs when a model is too large to fit in a single GPU memory.",
+        "DP is only for CPU training, while MP is only for GPUs.",
+        "There is no difference; they are synonyms."
+      ],
+      "correct": 1,
+      "explanation": "Data Parallelism splits data batches among GPUs running the identical model. Model Parallelism partitions the model's layers or parameter tensors across GPUs when the model exceeds a single GPU's VRAM."
+    },
+    {
+      "id": "q2",
+      "question": "For a model studying **Scaling, distributed training**, what is the primary goal of validation/evaluation?",
+      "options": [
+        "To minimize training loss to absolute zero.",
+        "To estimate the model's generalization performance on unseen test data and prevent overfitting.",
+        "To increase the parameter dimensions of the model layers.",
+        "To train the weights using gradient descent."
+      ],
+      "correct": 1,
+      "explanation": "Validation sets help evaluate how well a model generalizes to new, unseen samples, acting as a proxy for the test dataset to guide model adjustments."
+    }
+  ],
+  "35": [
+    {
+      "id": "q1",
+      "question": "In deep learning optimization, what does Model Distillation accomplish?",
+      "options": [
+        "Compressing model weights by converting float32 to float16.",
+        "Training a smaller, faster 'student' network to mimic the outputs (probabilities/logits) of a larger, highly accurate 'teacher' network.",
+        "Removing redundant channels and connections.",
+        "Compiling the model code to binary assembly."
+      ],
+      "correct": 1,
+      "explanation": "Knowledge Distillation transfers knowledge from a large ensemble or complex model (teacher) to a smaller model (student) by training the student to match the teacher's soft probability distributions."
+    },
+    {
+      "id": "q2",
+      "question": "For a model studying **Quantization, pruning, distillation**, what is the primary goal of validation/evaluation?",
+      "options": [
+        "To minimize training loss to absolute zero.",
+        "To estimate the model's generalization performance on unseen test data and prevent overfitting.",
+        "To increase the parameter dimensions of the model layers.",
+        "To train the weights using gradient descent."
+      ],
+      "correct": 1,
+      "explanation": "Validation sets help evaluate how well a model generalizes to new, unseen samples, acting as a proxy for the test dataset to guide model adjustments."
+    }
+  ],
+  "36": [
+    {
+      "id": "q1",
+      "question": "What does Byte Pair Encoding (BPE) do in modern NLP models?",
+      "options": [
+        "It translates sentences between different languages.",
+        "It is a subword tokenization algorithm that builds a vocabulary of common subwords, balancing character-level and word-level representations to handle out-of-vocabulary words.",
+        "It computes the cosine similarity between word vectors.",
+        "It parses text syntax into grammatical trees."
+      ],
+      "correct": 1,
+      "explanation": "BPE iteratively merges the most frequent pairs of characters/bytes in a corpus, forming subwords that let models handle new words by breaking them into familiar roots."
+    },
+    {
+      "id": "q2",
+      "question": "For a model studying **NLP, tokenization, embeddings**, what is the primary goal of validation/evaluation?",
+      "options": [
+        "To minimize training loss to absolute zero.",
+        "To estimate the model's generalization performance on unseen test data and prevent overfitting.",
+        "To increase the parameter dimensions of the model layers.",
+        "To train the weights using gradient descent."
+      ],
+      "correct": 1,
+      "explanation": "Validation sets help evaluate how well a model generalizes to new, unseen samples, acting as a proxy for the test dataset to guide model adjustments."
+    }
+  ],
+  "37": [
+    {
+      "id": "q1",
+      "question": "What is the difference between Object Detection and Instance Segmentation?",
+      "options": [
+        "Object Detection outputs bounding boxes, while Instance Segmentation outputs a pixel-level mask for each individual object.",
+        "Instance Segmentation is for 1D signals, while Object Detection is for 2D images.",
+        "Object Detection classifies entire images, while Instance Segmentation only locates one class.",
+        "There is no difference; they are identical."
+      ],
+      "correct": 0,
+      "explanation": "Object Detection locates objects with rectangular bounding boxes. Instance Segmentation goes further by identifying the exact pixels of each individual object (masking)."
+    },
+    {
+      "id": "q2",
+      "question": "For a model studying **Computer Vision, segmentation**, what is the primary goal of validation/evaluation?",
+      "options": [
+        "To minimize training loss to absolute zero.",
+        "To estimate the model's generalization performance on unseen test data and prevent overfitting.",
+        "To increase the parameter dimensions of the model layers.",
+        "To train the weights using gradient descent."
+      ],
+      "correct": 1,
+      "explanation": "Validation sets help evaluate how well a model generalizes to new, unseen samples, acting as a proxy for the test dataset to guide model adjustments."
+    }
+  ],
+  "38": [
+    {
+      "id": "q1",
+      "question": "What transform converts a 1D audio waveform into a 2D representation of frequencies over time (spectrogram)?",
+      "options": [
+        "The Laplace Transform",
+        "The Short-Time Fourier Transform (STFT)",
+        "Singular Value Decomposition",
+        "The Gradient descent transform"
+      ],
+      "correct": 1,
+      "explanation": "The STFT segments a continuous audio signal into short overlapping windows and computes the Fourier Transform on each segment, yielding a spectrogram."
+    },
+    {
+      "id": "q2",
+      "question": "For a model studying **Speech & Audio, ASR**, what is the primary goal of validation/evaluation?",
+      "options": [
+        "To minimize training loss to absolute zero.",
+        "To estimate the model's generalization performance on unseen test data and prevent overfitting.",
+        "To increase the parameter dimensions of the model layers.",
+        "To train the weights using gradient descent."
+      ],
+      "correct": 1,
+      "explanation": "Validation sets help evaluate how well a model generalizes to new, unseen samples, acting as a proxy for the test dataset to guide model adjustments."
+    }
+  ],
+  "39": [
+    {
+      "id": "q1",
+      "question": "What is the 'Cold Start' problem in Collaborative Filtering recommender systems?",
+      "options": [
+        "When the server CPU gets too cold to process matrix multiplications.",
+        "When a recommender system cannot make accurate recommendations for new users or new items due to a lack of historical interaction data.",
+        "When recommendation metrics drop in winter months.",
+        "When model weights are initialized with zeros."
+      ],
+      "correct": 1,
+      "explanation": "Collaborative Filtering relies on user-item interaction histories. When a new user joins or a new item is added, there are no ratings, causing recommendations to fail."
+    },
+    {
+      "id": "q2",
+      "question": "For a model studying **Recommender systems**, what is the primary goal of validation/evaluation?",
+      "options": [
+        "To minimize training loss to absolute zero.",
+        "To estimate the model's generalization performance on unseen test data and prevent overfitting.",
+        "To increase the parameter dimensions of the model layers.",
+        "To train the weights using gradient descent."
+      ],
+      "correct": 1,
+      "explanation": "Validation sets help evaluate how well a model generalizes to new, unseen samples, acting as a proxy for the test dataset to guide model adjustments."
+    }
+  ],
+  "40": [
+    {
+      "id": "q1",
+      "question": "In ARIMA time series modeling, what do the three components (p, d, q) represent?",
+      "options": [
+        "Precision, Depth, Quantity",
+        "Autoregression order (p), Differencing degree (d), and Moving Average order (q)",
+        "Prior probability (p), Derivative (d), and Quotient (q)",
+        "Polynomial degree (p), Dimension (d), and Quadratic factor (q)"
+      ],
+      "correct": 1,
+      "explanation": "ARIMA is Autoregressive Integrated Moving Average. 'p' is the autoregressive lag, 'd' is the differencing order to achieve stationarity, and 'q' is the moving average error lag."
+    },
+    {
+      "id": "q2",
+      "question": "For a model studying **Time Series, forecasting**, what is the primary goal of validation/evaluation?",
+      "options": [
+        "To minimize training loss to absolute zero.",
+        "To estimate the model's generalization performance on unseen test data and prevent overfitting.",
+        "To increase the parameter dimensions of the model layers.",
+        "To train the weights using gradient descent."
+      ],
+      "correct": 1,
+      "explanation": "Validation sets help evaluate how well a model generalizes to new, unseen samples, acting as a proxy for the test dataset to guide model adjustments."
+    }
+  ],
+  "41": [
+    {
+      "id": "q1",
+      "question": "Which of the following is most critical when compiling a capstone ML project for production?",
+      "options": [
+        "Training the model on a local notebook only.",
+        "Establishing a complete pipeline including data versioning, validation tests, model registry, deployment containerization, and monitoring hooks.",
+        "Removing all evaluation metrics.",
+        "Writing code without annotations or comments."
+      ],
+      "correct": 1,
+      "explanation": "A production capstone project requires a robust MLOps lifecycle to ensure reproducibility, versioning, automated testing, containerized deployment, and live monitoring."
+    },
+    {
+      "id": "q2",
+      "question": "For a model studying **Capstone Project & Review**, what is the primary goal of validation/evaluation?",
+      "options": [
+        "To minimize training loss to absolute zero.",
+        "To estimate the model's generalization performance on unseen test data and prevent overfitting.",
+        "To increase the parameter dimensions of the model layers.",
+        "To train the weights using gradient descent."
+      ],
+      "correct": 1,
+      "explanation": "Validation sets help evaluate how well a model generalizes to new, unseen samples, acting as a proxy for the test dataset to guide model adjustments."
+    }
+  ]
+}

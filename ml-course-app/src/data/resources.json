@@ -1,0 +1,256 @@
+[
+  {
+    "category": "Mathematics Foundation",
+    "items": [
+      {
+        "title": "Mathematics for Machine Learning",
+        "author": "Deisenroth, Faisal, Ong",
+        "type": "Textbook",
+        "url": "https://mml-book.github.io/",
+        "description": "The spine of the curriculum. Provides the fundamental math needed to understand ML algorithms."
+      },
+      {
+        "title": "Pattern Recognition and Machine Learning (PRML)",
+        "author": "Christopher Bishop",
+        "type": "Textbook",
+        "url": "/books/PRML.pdf",
+        "description": "A comprehensive textbook focusing on Bayesian perspectives."
+      },
+      {
+        "title": "Information Theory, Inference, and Learning Algorithms",
+        "author": "David MacKay",
+        "type": "Textbook",
+        "url": "/books/MacKay.pdf",
+        "description": "Essential reading for understanding information theory and entropy in ML."
+      },
+      {
+        "title": "Deep Learning",
+        "author": "Goodfellow, Bengio, Courville",
+        "type": "Textbook",
+        "url": "https://www.deeplearningbook.org/",
+        "description": "The foundational textbook for deep learning."
+      },
+      {
+        "title": "The Matrix Calculus You Need For Deep Learning",
+        "author": "Terence Parr & Jeremy Howard",
+        "type": "Article",
+        "url": "https://explained.ai/matrix-calculus/",
+        "description": "A straightforward guide explaining how to compute gradients for neural networks."
+      },
+      {
+        "title": "Essence of Linear Algebra, Calculus & Neural Networks",
+        "author": "3Blue1Brown",
+        "type": "Video Course",
+        "url": "https://www.youtube.com/c/3blue1brown",
+        "description": "The absolute best visual intuition for mathematical concepts."
+      },
+      {
+        "title": "MIT 18.06 Linear Algebra",
+        "author": "Gilbert Strang",
+        "type": "Video Course",
+        "url": "https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/",
+        "description": "The classic, deepest dive into linear algebra."
+      },
+      {
+        "title": "Harvard Stat 110",
+        "author": "Joe Blitzstein",
+        "type": "Video Course",
+        "url": "https://projects.iq.harvard.edu/stat110/youtube",
+        "description": "A rigorous and intuitive course on probability."
+      },
+      {
+        "title": "StatQuest",
+        "author": "Josh Starmer",
+        "type": "Video Channel",
+        "url": "https://www.youtube.com/user/joshstarmer",
+        "description": "Breaks down complex statistics and ML concepts simply. Bam!"
+      }
+    ]
+  },
+  {
+    "category": "Python & Software Engineering",
+    "items": [
+      {
+        "title": "Fluent Python (2nd ed.)",
+        "author": "Luciano Ramalho",
+        "type": "Book",
+        "url": "https://www.oreilly.com/library/view/fluent-python-2nd/9781492056348/",
+        "description": "Mastering idiomatic, advanced Python programming."
+      },
+      {
+        "title": "Effective Python (2nd ed.)",
+        "author": "Brett Slatkin",
+        "type": "Book",
+        "url": "https://effectivepython.com/",
+        "description": "90 specific ways to write better Python."
+      },
+      {
+        "title": "Python Data Science Handbook",
+        "author": "Jake VanderPlas",
+        "type": "Book",
+        "url": "https://jakevdp.github.io/PythonDataScienceHandbook/",
+        "description": "Complete guide to NumPy, Pandas, Matplotlib, and Scikit-Learn."
+      },
+      {
+        "title": "Python for Data Analysis (3rd ed.)",
+        "author": "Wes McKinney",
+        "type": "Book",
+        "url": "https://wesmckinney.com/book/",
+        "description": "The definitive guide to Pandas, written by its creator."
+      },
+      {
+        "title": "numpy-100",
+        "author": "Nicolas P. Rougier",
+        "type": "Repo",
+        "url": "https://github.com/rougier/numpy-100",
+        "description": "100 exercises to master NumPy vectorization."
+      },
+      {
+        "title": "calmcode.io",
+        "author": "Vincent D. Warmerdam",
+        "type": "Tutorials",
+        "url": "https://calmcode.io/",
+        "description": "Short, calm video tutorials on tools like pytest, wandb, and rich."
+      }
+    ]
+  },
+  {
+    "category": "Classical Machine Learning",
+    "items": [
+      {
+        "title": "Machine Learning Specialization",
+        "author": "Andrew Ng",
+        "type": "Video Course",
+        "url": "https://www.coursera.org/specializations/machine-learning-introduction",
+        "description": "The modern reboot of the most famous ML course."
+      },
+      {
+        "title": "Hands-On Machine Learning (3rd ed.)",
+        "author": "Aurélien Géron",
+        "type": "Book",
+        "url": "https://www.oreilly.com/library/view/hands-on-machine-learning/9781098125967/",
+        "description": "The best practical guide for Scikit-Learn, Keras, and TensorFlow."
+      },
+      {
+        "title": "An Introduction to Statistical Learning (ISLP)",
+        "author": "James, Witten, Hastie, Tibshirani",
+        "type": "Book",
+        "url": "https://www.statlearning.com/",
+        "description": "The theoretical companion to practical classical ML."
+      }
+    ]
+  },
+  {
+    "category": "Deep Learning & Neural Networks",
+    "items": [
+      {
+        "title": "Neural Networks: Zero to Hero",
+        "author": "Andrej Karpathy",
+        "type": "Video Course",
+        "url": "https://karpathy.ai/zero-to-hero.html",
+        "description": "Building neural networks, autograd, and GPT from scratch."
+      },
+      {
+        "title": "Deep Learning Specialization",
+        "author": "Andrew Ng",
+        "type": "Video Course",
+        "url": "https://www.coursera.org/specializations/deep-learning",
+        "description": "Comprehensive covering of MLPs, CNNs, and RNNs."
+      },
+      {
+        "title": "Dive into Deep Learning",
+        "author": "Zhang, Lipton, Li, Smola",
+        "type": "Book",
+        "url": "https://d2l.ai/",
+        "description": "Interactive deep learning book with code, math, and discussions."
+      },
+      {
+        "title": "Stanford CS231n",
+        "author": "Stanford University",
+        "type": "Course Notes",
+        "url": "https://cs231n.github.io/",
+        "description": "Exceptional notes on CNNs and computer vision."
+      }
+    ]
+  },
+  {
+    "category": "NLP, Transformers, and GenAI",
+    "items": [
+      {
+        "title": "Stanford CS224n",
+        "author": "Stanford University",
+        "type": "Video Course",
+        "url": "http://web.stanford.edu/class/cs224n/",
+        "description": "Deep learning applied to natural language processing."
+      },
+      {
+        "title": "Hugging Face NLP Course",
+        "author": "Hugging Face",
+        "type": "Video Course",
+        "url": "https://huggingface.co/learn/nlp-course/chapter1/1",
+        "description": "Hands-on course mastering the Transformers ecosystem."
+      },
+      {
+        "title": "The Illustrated Transformer",
+        "author": "Jay Alammar",
+        "type": "Blog",
+        "url": "http://jalammar.github.io/illustrated-transformer/",
+        "description": "The best visual guide to the Transformer architecture."
+      },
+      {
+        "title": "The Annotated Transformer",
+        "author": "Harvard NLP",
+        "type": "Blog",
+        "url": "http://nlp.seas.harvard.edu/annotated-transformer/",
+        "description": "The original paper implemented line-by-line in PyTorch."
+      },
+      {
+        "title": "Lil'Log",
+        "author": "Lilian Weng",
+        "type": "Blog",
+        "url": "https://lilianweng.github.io/",
+        "description": "In-depth, highly rigorous blog posts on LLMs and diffusion."
+      }
+    ]
+  },
+  {
+    "category": "Bio-ML & Protein Modeling",
+    "items": [
+      {
+        "title": "ESM-2 / ESMFold",
+        "author": "Lin et al.",
+        "type": "Paper & Repo",
+        "url": "https://github.com/facebookresearch/esm",
+        "description": "Evolutionary Scale Modeling (protein language models)."
+      },
+      {
+        "title": "AlphaFold2",
+        "author": "Jumper et al.",
+        "type": "Paper",
+        "url": "https://www.nature.com/articles/s41586-021-03819-2",
+        "description": "Highly accurate protein structure prediction."
+      },
+      {
+        "title": "ProteinMPNN",
+        "author": "Dauparas et al.",
+        "type": "Paper & Repo",
+        "url": "https://github.com/dauparas/ProteinMPNN",
+        "description": "Robust deep learning based protein sequence design."
+      },
+      {
+        "title": "RFdiffusion",
+        "author": "Watson et al.",
+        "type": "Paper & Repo",
+        "url": "https://github.com/RosettaCommons/RFdiffusion",
+        "description": "State-of-the-art generative protein design."
+      },
+      {
+        "title": "Hugging Face Diffusion Course",
+        "author": "Hugging Face",
+        "type": "Video Course",
+        "url": "https://huggingface.co/learn/diffusion-course/unit0/1",
+        "description": "Learn the theory behind diffusion models."
+      }
+    ]
+  }
+]
